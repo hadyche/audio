@@ -29,3 +29,17 @@ Each event uses a UUID `event_id` shared between client Pixel and server CAPI fo
 ```
 npx netlify dev
 ```
+
+## Deploy
+
+The Netlify site `free-recordings` (site_id `d99a416c-3d85-4fdc-9b88-190d6f5f9b34`, https://free-recordings.netlify.app/) is already created and has env vars set. To push a deploy:
+
+```
+NETLIFY_PAT=nfp_xxx SITE_ID=d99a416c-3d85-4fdc-9b88-190d6f5f9b34 node scripts/deploy.js
+```
+
+Or with the official CLI:
+
+```
+npx netlify deploy --prod --dir public --functions netlify/functions --site d99a416c-3d85-4fdc-9b88-190d6f5f9b34 --auth nfp_xxx
+```
